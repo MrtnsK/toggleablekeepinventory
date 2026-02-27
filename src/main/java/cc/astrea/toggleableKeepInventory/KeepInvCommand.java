@@ -2,7 +2,6 @@ package cc.astrea.toggleableKeepInventory;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
-import org.bukkit.GameRule;
 import org.bukkit.NamespacedKey;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -43,7 +42,7 @@ public class KeepInvCommand implements CommandExecutor, TabExecutor {
         if (args.length == 0) { // no arguments passed, just toggle
             Boolean previousValue = player.getPersistentDataContainer().get(key, PersistentDataType.BOOLEAN);
             if (previousValue == null) {
-                previousValue = player.getWorld().getGameRuleValue(GameRule.KEEP_INVENTORY);
+                previousValue = Boolean.parseBoolean(player.getWorld().getGameRuleValue("keepInventory"));
             }
             value = Boolean.FALSE.equals(previousValue);
         } else {
