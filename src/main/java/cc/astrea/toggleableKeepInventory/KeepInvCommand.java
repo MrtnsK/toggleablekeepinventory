@@ -1,5 +1,6 @@
 package cc.astrea.toggleableKeepInventory;
 
+import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.GameRule;
 import org.bukkit.NamespacedKey;
@@ -24,7 +25,7 @@ public class KeepInvCommand implements CommandExecutor, TabExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (!sender.hasPermission("togglekeepinv.command")) {
-            sender.sendMessage(NamedTextColor.RED + "You do not have permission to use this command.");
+            sender.sendMessage(Component.text("You do not have permission to use this command.", NamedTextColor.RED));
             return true;
         }
 
