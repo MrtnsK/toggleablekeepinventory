@@ -8,6 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
+import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -39,7 +40,7 @@ public class KeepInvCommand implements CommandExecutor, TabExecutor {
         boolean value;
 
         if (args.length == 0) { // no arguments passed, just toggle
-            Boolean previousValue = player.getPersistentDataContainer().get(key, BooleanType.BOOLEAN);
+            Boolean previousValue = player.getPersistentDataContainer().get(key, PersistentDataType.BOOLEAN);
             if (previousValue == null) {
                 previousValue = player.getWorld().getGameRuleValue(GameRule.KEEP_INVENTORY);
             }
@@ -54,7 +55,7 @@ public class KeepInvCommand implements CommandExecutor, TabExecutor {
             value = args[0].equalsIgnoreCase("on") || args[0].equalsIgnoreCase("true");
         }
 
-        player.getPersistentDataContainer().set(key, BooleanType.BOOLEAN, value);
+        player.getPersistentDataContainer().set(key, PersistentDataType.BOOLEAN, value);
         sender.sendMessage("Keep inventory turned " + (value ? "on" : "off") + "."); // TODO make this a string you can set
         return true;
     }

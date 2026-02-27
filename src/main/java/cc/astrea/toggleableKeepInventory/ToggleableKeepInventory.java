@@ -6,6 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class ToggleableKeepInventory extends JavaPlugin implements Listener {
@@ -40,7 +41,7 @@ public final class ToggleableKeepInventory extends JavaPlugin implements Listene
 
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event) {
-        Boolean keepInvValue = event.getPlayer().getPersistentDataContainer().get(key, BooleanType.BOOLEAN);
+        Boolean keepInvValue = event.getPlayer().getPersistentDataContainer().get(key, PersistentDataType.BOOLEAN);
         if (keepInvValue == null) {
             return;
         }
