@@ -65,3 +65,6 @@ gradle-app.setting
 
 .idea/
 run/
+
+### Maven ###
+target/
