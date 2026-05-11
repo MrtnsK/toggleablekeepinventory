@@ -5,7 +5,7 @@
 
     <groupId>cc.astrea</groupId>
     <artifactId>toggleablekeepinventory</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -25,7 +25,7 @@
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>26.1.1.build.29-alpha</version>
+            <version>26.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
