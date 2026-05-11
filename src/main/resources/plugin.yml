@@ -1,7 +1,7 @@
 name: ToggleableKeepInventory
 version: '${project.version}'
 main: cc.astrea.toggleableKeepInventory.ToggleableKeepInventory
-api-version: '26'
+api-version: '26.2'
 
 permissions:
   togglekeepinv.command:
